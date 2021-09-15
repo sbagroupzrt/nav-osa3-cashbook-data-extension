@@ -23,3 +23,7 @@ A számlázó program az előírásoknak megfelelően elkészíti az OSA3 XML-t 
 A számlázó program létrehoz egy olyan XML állományt, amiben minden lehetséegs adat megtalálható ahhoz, hogy a könyvelőprogramban pénzügyi tétel lehessen belőle és alkalmas legyen a könyvelésre és azt hasonló módszerrel elküldi a Cashbbook API-jának.
 
 ## A kibővítéssel nem érintett adatok
+
+Vannak esetek, amikor az OSA3 XML kibővítés olyan adatokat érint, ami egyébként nem az adatkibővítés része. Ez tipikusan a magánszemélyes vevők számlái, amikor is a NAV-hoz nem kerül bebküldésre a vevő neve és címe.
+
+A módszer ugyan az, mint az előzőekben említett, azonban ebben az esetben az adatszolgáltatás után az OSA3 XSD-je szerinti megfelelő mezők kerülnek feltöltésre. Ezt követően az XML ugyan úgy elküldésre kerül a Cashbook API-jánk.
