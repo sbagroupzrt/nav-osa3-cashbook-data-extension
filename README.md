@@ -20,5 +20,6 @@ A számlázó program az előírásoknak megfelelően elkészíti az OSA3 XML-t 
 
 ### Bevált módszer adatszolgáltatás alá nem eső számlák esetébben
 
+A számlázó program létrehoz egy olyan XML állományt, amiben minden lehetséegs adat megtalálható ahhoz, hogy a könyvelőprogramban pénzügyi tétel lehessen belőle és alkalmas legyen a könyvelésre és azt hasonló módszerrel elküldi a Cashbbook API-jának.
 
 ## A kibővítéssel nem érintett adatok
