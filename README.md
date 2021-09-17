@@ -225,9 +225,24 @@ Van lehetőség arra, hogy az XML fájlban átadásra kerüljön a tételhez tar
 
 ## Szállító számlák
 
-Ha az integrálásra kerülő program tart nyilván szállító számlákat, akkor van lehetőség azokat isfeladni a Cashbook-nak. Ehhez azt kell tenni, hogy a szállító számlák adataiból is kell generálni egyXML-t, ahol a vevő lesz az a vállalkozás, aki befogadta a számlákat, valamint ki kell egészíteni egy**additionalInvoiceData** elemmel (C00010_INVOICE_TYPE), ami megmondja a Cashbook-nak, hogyaz szállító számla.
+Ha az integrálásra kerülő program tart nyilván szállító számlákat, akkor van lehetőség azokat isfeladni a Cashbook-nak. Ehhez azt kell tenni, hogy a szállító számlák adataiból is kell generálni egy XML-t, ahol a vevő lesz az a vállalkozás, aki befogadta a számlákat, valamint ki kell egészíteni egy **additionalInvoiceData** elemmel, ami megmondja a Cashbook-nak, hogyz szállító számla.
 
-Ha ez az elem hiányzik, akkor a Cashbook alapból vevő számlának tekinti a beérkező adatokat, haaz elem megtalálható, akkor a tartalma lehet income (bevétel, azaz vevő számla) vagy expense(kiadás, azaz szállító számla).
+Ha ez az elem hiányzik, akkor a Cashbook alapból vevő számlának tekinti a beérkező adatokat, ha az elem megtalálható, akkor a tartalma lehet income (bevétel, azaz vevő számla) vagy expense(kiadás, azaz szállító számla).
+```
+...
+<invoiceData>
+    ...
+    <additionalInvoiceData>
+        <dataName>C00010_INVOICE_TYPE</dataName>
+        <dataDescription>Invoice is an expense or an income</dataDescription>
+        <dataValue>                    
+            expense
+        </dataValue>
+    </additionalInvoiceData>
+    ...
+</invoiceData>
+...
+```
 
 ## Kiegyenlítések
 
