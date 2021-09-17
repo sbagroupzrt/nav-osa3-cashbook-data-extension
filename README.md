@@ -35,21 +35,20 @@ A módszer ugyan az, mint az előzőekben említett, azonban ebben az esetben az
 
 ## A bővített adatok
 
-* Kiegyenlítés
-* Számla szintű megjegyzés
-* Számla szintű munkaszám
-* Számla szintű nettó főkönyvi szám
-* Számla szintű áfa főkönyvi szám
-* Számla szintű bruttó főkönyvi szám
-* Tétel szintű nettó főkönyvi szám
-* Tétel szintű áfa főkönyvi szám
-* Tétel szintű bruttó főkönyvi szám
-* Tétel szintű áfa bevaállsi sor
-* Tétel szintű elnevezés (WIP)
+* Kiegyenlítés (invoicePayments)
+* Számla szintű megjegyzés (additionalInvoiceData, dataName=C00001_INVOICE_COMMENT)
+* Számla szintű munkaszám (additionalInvoiceData, dataName=C00002_WORK_NUMBER)
+* Számla szintű nettó főkönyvi szám (additionalInvoiceData, dataName=C00003_LEDGER_NETTO)
+* Számla szintű áfa főkönyvi szám (additionalInvoiceData, dataName=C00004_LEDGER_TAX)
+* Számla szintű bruttó főkönyvi szám (additionalInvoiceData, dataName=C00005_LEDGER_GROSS)
+* Tétel szintű nettó főkönyvi szám (additionalLineData, dataName=C00006_LEDGER_NETTO)
+* Tétel szintű áfa főkönyvi szám (additionalLineData, dataName=C00007_LEDGER_TAX)
+* ~~Tétel szintű elnevezés (additionalLineData, dataName=C00008_LEDGER_TITLE)~~
+* Tétel szintű áfa bevaállsi sor (additionalLineData, dataName=C00009_VAT_RETURN_LINE)
 
 ## Szállító számlák
 
-Ha az integrálásra kerülő program tart nyilván szállító számlákat, akkor van lehetőség azokat isfeladni a Cashbook-nak. Ehhez azt kell tenni, hogy a szállító számlák adataiból is kell generálni egyXML-t, ahol a vevő lesz az a vállalkozás, aki befogadta a számlákat, valamint ki kell egészíteni egyadditionalInvoiceData elemmel (C00010_INVOICE_TYPE), ami megmondja a Cashbook-nak, hogyaz szállító számla.
+Ha az integrálásra kerülő program tart nyilván szállító számlákat, akkor van lehetőség azokat isfeladni a Cashbook-nak. Ehhez azt kell tenni, hogy a szállító számlák adataiból is kell generálni egyXML-t, ahol a vevő lesz az a vállalkozás, aki befogadta a számlákat, valamint ki kell egészíteni egy**additionalInvoiceData** elemmel (C00010_INVOICE_TYPE), ami megmondja a Cashbook-nak, hogyaz szállító számla.
 
 Ha ez az elem hiányzik, akkor a Cashbook alapból vevő számlának tekinti a beérkező adatokat, haaz elem megtalálható, akkor a tartalma lehet income (bevétel, azaz vevő számla) vagy expense(kiadás, azaz szállító számla).
 
