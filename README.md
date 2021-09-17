@@ -308,3 +308,14 @@ A dataValue mező értékei a következők lehetnek:
 * COLLECTION: csoportos beszedés
 
 ## Számlakép (PDF)
+
+A számlához tartozó számlakép beküldhető az XML részekként BASE64 kódolt szövegben. Ehhez az OSA3 XSD álltál definiált **additionalInvoiceData** elemet kell alkalmazni az alábbiak szerint.
+```
+...
+<additionalInvoiceData>
+    <dataName>C00000_BASE64_PDF</dataName>
+    <dataDescription>PDF</dataDescription>
+    <dataValue>Ide jön a PDF fájl tartalma BASE64-ben</dataValue>
+</additionalInvoiceData>
+...
+```
