@@ -60,10 +60,46 @@ A kibővített adatszerkezettel van lehetőség a kiegyenlítések adatainak át
 ```
 Fizetési mód az OSA3 alapértelmezett fizetési módjai szerint, a kiegyenlítés helye: P -> Pénztár, B -> Bank.
 
+### Számla szintű megjegyzés
+
+Van lehetőség arra, hogy az XML fájlban átadásra kerüljön a számla megjegyzése. Ehhez az OSA3 XSD álltál definiált **additionalInvoiceData** elemet kell alkalmazni az alábbiak szerint.
+```
+...
+<invoiceData>
+    ...
+    <additionalInvoiceData>
+        <dataName>C00001_INVOICE_COMMENT</dataName>
+        <dataDescription>Invoice comment</dataDescription>
+        <dataValue>                    
+            Tárhely számla.
+        </dataValue>
+    </additionalInvoiceData>
+    ...
+</invoiceData>
+...
+```
+### Számla szintű munkaszám
+
+Van lehetőség arra, hogy az XML fájlban átadásra kerüljön a számlához tartozó munkaszám. Ehhez az OSA3 XSD álltál definiált **additionalInvoiceData** elemet kell alkalmazni az alábbiak szerint.
+```
+...
+<invoiceData>
+    ...
+    <additionalInvoiceData>
+        <dataName>C00002_WORK_NUMBER</dataName>
+        <dataDescription>Invoice work number</dataDescription>
+        <dataValue>                    
+            AWS
+        </dataValue>
+    </additionalInvoiceData>
+    ...
+</invoiceData>
+...
+
+```
 
 
-* Számla szintű megjegyzés (additionalInvoiceData, dataName=C00001_INVOICE_COMMENT)
-* Számla szintű munkaszám (additionalInvoiceData, dataName=C00002_WORK_NUMBER)
+
 * Számla szintű nettó főkönyvi szám (additionalInvoiceData, dataName=C00003_LEDGER_NETTO)
 * Számla szintű áfa főkönyvi szám (additionalInvoiceData, dataName=C00004_LEDGER_TAX)
 * Számla szintű bruttó főkönyvi szám (additionalInvoiceData, dataName=C00005_LEDGER_GROSS)
