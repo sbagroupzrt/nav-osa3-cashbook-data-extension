@@ -58,8 +58,7 @@ A kibővített adatszerkezettel van lehetőség a kiegyenlítések adatainak át
 </invoice>
 ...
 ```
-* Fizetési mód az OSA3 alapértelmezett fizetéso módjai szerint.
-* A kiegyenlítés helye: P-Pénztár, B-Bank.
+Fizetési mód az OSA3 alapértelmezett fizetési módjai szerint, a kiegyenlítés helye: P -> Pénztár, B -> Bank.
 
 
 
