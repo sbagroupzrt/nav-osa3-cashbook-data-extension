@@ -280,6 +280,31 @@ A kibővített adatszerkezettel van lehetőség a kiegyenlítések adatainak át
 ```
 A kiegyenlítés helye: P -> Pénztár, B -> Bank, fizetési mód következő pontban részletezve.
 
+## A sémától eltérő fizetési módok
 
+Lehetőségünk van az XML fájlban az XSD alapértelmezett fizetési módjaihoz képest (CASH, TRANSFER, CARD, VOUCHER, OTHER) további fizetési módokat megadni. A további fizetési módok átadásához szükséges, hogy a paymentMethod értéke OTHER legyen és tartalmazza az XML az alábbi additionalInvoiceData-t:
+```
+...
+<invoiceData>
+    ...
+    <paymentMethod>OTHER</paymentMethod>
+    ...
+    <additionalInvoiceData>
+      <dataName>C00013_ADDITIONAL_PAYMENT_METHOD</dataName>
+      <dataDescription>Additional payment methods</dataDescription>
+      <dataValue>COLLECTION</dataValue>
+    </additionalInvoiceData>
+    ....
+</invoiceData>
+...
+```
+
+A dataValue mező értékei a következők lehetnek:
+
+* CHECK: csekkes fizetési mód
+* ENCASHMENT: inkasszó
+* COMPENZATION: kompenzáció
+* CASHONDELIVERY: utánvét
+* COLLECTION: csoportos beszedés
 
 ## Számlakép (PDF)
