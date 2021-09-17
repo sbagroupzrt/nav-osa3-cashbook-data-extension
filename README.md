@@ -322,9 +322,9 @@ A számlához tartozó számlakép beküldhető az XML részekként BASE64 kódo
 
 ## Impresszum
 
-SBA Group Zrt.
-1108 Budapest, Bányató utca 13.
-MineLake irodaház
-25566552-2-42
-E-mail: info@cashbook.hu
+SBA Group Zrt.  
+1108 Budapest, Bányató utca 13.  
+MineLake irodaház  
+25566552-2-42  
+E-mail: info@cashbook.hu  
 Telefonszám: +36 1/998-8506 (munkanapokon 10:00-16:00 óra között)
