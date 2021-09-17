@@ -35,31 +35,6 @@ A módszer ugyan az, mint az előzőekben említett, azonban ebben az esetben az
 
 ## A bővített adatok
 
-### Kiegyenlítés
-
-A kibővített adatszerkezettel van lehetőség a kiegyenlítések adatainak átadására, amita Cashbook továbbít a könyvelőprogram felé.
-```
-...
-<invoice>
-    ...
-    <invoicePayments>
-        <payment>
-            <locationCode>P</locationCode>
-            <locationLedger>3811</locationLedger>
-            <paymentMethod>CASH</paymentMethod>
-            <paymentDate>2019-08-01</paymentDate>
-            <amount>55000</amount>
-            <currencyCode>HUF</currencyCode>
-            <exchangeRate>1</exchangeRate>
-            <warrantNumber>PB-201908-21558</warrantNumber>
-            <paymentComment>Pénztárba befizette.</paymentComment>
-        </payment>
-    </invoicePayments>
-</invoice>
-...
-```
-Fizetési mód az OSA3 alapértelmezett fizetési módjai szerint, a kiegyenlítés helye: P -> Pénztár, B -> Bank.
-
 ### Számla szintű megjegyzés
 
 Van lehetőség arra, hogy az XML fájlban átadásra kerüljön a számla megjegyzése. Ehhez az OSA3 XSD álltál definiált **additionalInvoiceData** elemet kell alkalmazni az alábbiak szerint.
@@ -280,8 +255,31 @@ Ha ez az elem hiányzik, akkor a Cashbook alapból vevő számlának tekinti a b
 ...
 ```
 
-## Kiegyenlítések
+### Kiegyenlítés
 
-Amennyiben a számla kibocsájtása után újabb kiegyenlítést tud az Ügyfél rögzíteni a számlázó programban, abban az esetben az egész XML újra küldhető (az új és régi kiegyenlítésekkel együtt) és a kiegyenlítés bekerül a pénzügyi tétel adatai közé. A további kiegyenlítések beküldése esetén a PDF számlakép nem szükséges, azonban a POST mezőt el kell küldeni a payments tartalommal.
+A kibővített adatszerkezettel van lehetőség a kiegyenlítések adatainak átadására, amita Cashbook továbbít a könyvelőprogram felé. Amennyiben a számla kibocsájtása után újabb kiegyenlítést tud az Ügyfél rögzíteni a számlázó programban, abban az esetben az egész XML újra küldhető (az új és régi kiegyenlítésekkel együtt) és a kiegyenlítés bekerül a pénzügyi tétel adatai közé. A további kiegyenlítések beküldése esetén a PDF számlakép nem szükséges, azonban a POST mezőt el kell küldeni a payments tartalommal.
+```
+...
+<invoice>
+    ...
+    <invoicePayments>
+        <payment>
+            <locationCode>P</locationCode>
+            <locationLedger>3811</locationLedger>
+            <paymentMethod>CASH</paymentMethod>
+            <paymentDate>2019-08-01</paymentDate>
+            <amount>55000</amount>
+            <currencyCode>HUF</currencyCode>
+            <exchangeRate>1</exchangeRate>
+            <warrantNumber>PB-201908-21558</warrantNumber>
+            <paymentComment>Pénztárba befizette.</paymentComment>
+        </payment>
+    </invoicePayments>
+</invoice>
+...
+```
+A kiegyenlítés helye: P -> Pénztár, B -> Bank, fizetési mód következő pontban részletezve.
+
+
 
 ## Számlakép (PDF)
