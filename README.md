@@ -32,3 +32,29 @@ A számlázó program létrehoz egy olyan XML állományt, amiben minden lehets�
 Vannak esetek, amikor az OSA3 XML kibővítés olyan adatokat érint, ami egyébként nem az adatbővítés része. Ez tipikusan a magánszemélyes vevők számlái, amikor is a NAV-hoz nem kerül beküldésre a vevő neve és címe.
 
 A módszer ugyan az, mint az előzőekben említett, azonban ebben az esetben az adatszolgáltatás után az OSA3 XSD-je szerinti megfelelő mezők kerülnek feltöltésre. Ezt követően az XML ugyan úgy elküldésre kerül a Cashbook API-jánk.
+
+## A bővített adatok
+
+* Kiegyenlítés
+* Számla szintű megjegyzés
+* Számla szintű munkaszám
+* Számla szintű nettó főkönyvi szám
+* Számla szintű áfa főkönyvi szám
+* Számla szintű bruttó főkönyvi szám
+* Tétel szintű nettó főkönyvi szám
+* Tétel szintű áfa főkönyvi szám
+* Tétel szintű bruttó főkönyvi szám
+* Tétel szintű áfa bevaállsi sor
+* Tétel szintű elnevezés (WIP)
+
+## Szállító számlák
+
+Ha az integrálásra kerülő program tart nyilván szállító számlákat, akkor van lehetőség azokat isfeladni a Cashbook-nak. Ehhez azt kell tenni, hogy a szállító számlák adataiból is kell generálni egyXML-t, ahol a vevő lesz az a vállalkozás, aki befogadta a számlákat, valamint ki kell egészíteni egyadditionalInvoiceData elemmel (C00010_INVOICE_TYPE), ami megmondja a Cashbook-nak, hogyaz szállító számla.
+
+Ha ez az elem hiányzik, akkor a Cashbook alapból vevő számlának tekinti a beérkező adatokat, haaz elem megtalálható, akkor a tartalma lehet income (bevétel, azaz vevő számla) vagy expense(kiadás, azaz szállító számla).
+
+## Kiegyenlítések
+
+Amennyiben a számla kibocsájtása után újabb kiegyenlítést tud az Ügyfél rögzíteni a számlázó programban, abban az esetben az egész XML újra küldhető (az új és régi kiegyenlítésekkel együtt) és a kiegyenlítés bekerül a pénzügyi tétel adatai közé. A további kiegyenlítések beküldése esetén a PDF számlakép nem szükséges, azonban a POST mezőt el kell küldeni a payments tartalommal.
+
+## Számlakép (PDF)
