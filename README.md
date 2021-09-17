@@ -188,7 +188,7 @@ Van lehetőség arra, hogy az XML fájlban átadásra kerüljön a tételhez tar
 ```
 ### Tétel szintű fökönyvi elnevezés
 
-Van lehetőség arra, hogy az XML fájlban átadásra kerüljön a tételhez tartozó főkönyvi elnevezés. Ehhez az OSA3 XSD álltál definiált **additionalLineData** elemet kell alkalmazni az alábbiak szerint.
+Van lehetőség arra, hogy az XML fájlban átadásra kerüljön a tételhez tartozó főkönyvi elnevezés (pl.: anyagköltség, áramdíj, értékesítés árbevétel). Ehhez az OSA3 XSD álltál definiált **additionalLineData** elemet kell alkalmazni az alábbiak szerint.
 ```
 ...
 <line>
@@ -216,6 +216,42 @@ Van lehetőség arra, hogy az XML fájlban átadásra kerüljön a tételhez tar
         <dataDescription>Vat return line</dataDescription>
         <dataValue>                    
             06
+        </dataValue>
+    </additionalLineData>
+    ....
+</line>
+...
+```
+### Tétel szintű munkaszám
+
+Van lehetőség arra, hogy az XML fájlban átadásra kerüljön a tételhez tartozó munkaszám. Ehhez az OSA3 XSD álltál definiált **additionalLineData** elemet kell alkalmazni az alábbiak szerint.
+```
+...
+<line>
+    ...
+    <additionalLineData>
+        <dataName>C00011_WORK_NUMBER</dataName>
+        <dataDescription>Work number for line</dataDescription>
+        <dataValue>                    
+            MSZ-22522
+        </dataValue>
+    </additionalLineData>
+    ....
+</line>
+...
+```
+### Tétel szintű megjegyzés
+
+Van lehetőség arra, hogy az XML fájlban átadásra kerüljön a tételhez tartozó megjegyzés. Ehhez az OSA3 XSD álltál definiált **additionalLineData** elemet kell alkalmazni az alábbiak szerint.
+```
+...
+<line>
+    ...
+    <additionalLineData>
+        <dataName>C00012_COMMENT</dataName>
+        <dataDescription>Comment for line</dataDescription>
+        <dataValue>                    
+            Futár
         </dataValue>
     </additionalLineData>
     ....
