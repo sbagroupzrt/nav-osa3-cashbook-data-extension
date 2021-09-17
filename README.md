@@ -95,14 +95,62 @@ Van lehetőség arra, hogy az XML fájlban átadásra kerüljön a számlához t
     ...
 </invoiceData>
 ...
+```
+### Számla szintű nettó főkönyvi szám
 
+Van lehetőség arra, hogy az XML fájlban átadásra kerüljön a számlához tartozó nettó főkönyvi szám. Ehhez az OSA3 XSD álltál definiált **additionalInvoiceData** elemet kell alkalmazni az alábbiak szerint.
+```
+...
+<invoiceData>
+    ...
+    <additionalInvoiceData>
+        <dataName>C00003_LEDGER_NETTO</dataName>
+        <dataDescription>Ledger number for invoice netto</dataDescription>
+        <dataValue>                    
+            911
+        </dataValue>
+    </additionalInvoiceData>
+    ...
+</invoiceData>
+...
+```
+### Számla szintű áfa főkönyvi szám
+
+Van lehetőség arra, hogy az XML fájlban átadásra kerüljön a számlához tartozó áfa főkönyvi szám. Ehhez az OSA3 XSD álltál definiált **additionalInvoiceData** elemet kell alkalmazni az alábbiak szerint.
+```
+...
+<invoiceData>
+    ...
+    <additionalInvoiceData>
+        <dataName>C00004_LEDGER_TAX</dataName>
+        <dataDescription>Ledger number for invoice tax</dataDescription>
+        <dataValue>                    
+            467
+        </dataValue>
+    </additionalInvoiceData>
+    ....
+</invoiceData>
+...
+```
+### Számla szintű bruttó főkönyvi szám
+
+Van lehetőség arra, hogy az XML fájlban átadásra kerüljön a számlához tartozó bruttó főkönyvi szám. Ehhez az OSA3 XSD álltál definiált **additionalInvoiceData** elemet kell alkalmazni az alábbiak szerint.
+```
+...
+<invoiceData>
+    ...
+    <additionalInvoiceData>
+        <dataName>C00005_LEDGER_GROSS</dataName>
+        <dataDescription>Ledgern number for invoice gross</dataDescription>
+        <dataValue>                    
+            311
+        </dataValue>
+    </additionalInvoiceData>
+    ...
+</invoiceData>
+...
 ```
 
-
-
-* Számla szintű nettó főkönyvi szám (additionalInvoiceData, dataName=C00003_LEDGER_NETTO)
-* Számla szintű áfa főkönyvi szám (additionalInvoiceData, dataName=C00004_LEDGER_TAX)
-* Számla szintű bruttó főkönyvi szám (additionalInvoiceData, dataName=C00005_LEDGER_GROSS)
 * Tétel szintű nettó főkönyvi szám (additionalLineData, dataName=C00006_LEDGER_NETTO)
 * Tétel szintű áfa főkönyvi szám (additionalLineData, dataName=C00007_LEDGER_TAX)
 * ~~Tétel szintű elnevezés (additionalLineData, dataName=C00008_LEDGER_TITLE)~~
