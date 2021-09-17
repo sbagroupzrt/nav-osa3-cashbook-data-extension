@@ -1,6 +1,6 @@
 ## NAV OSA3 XML Cashbook adatkibővítés
 
-![Cashbook](https://kreativ-informatika.cashbook.hu/site/anim/anim_01_.mp4)
+![Cashbook](https://kreativ-informatika.cashbook.hu/site/anim/anim_01.gif)
 
 Az OSA3 XML adatkibővítés azzal a céllal készült, hogy a kötelező adatszolgáltatással nem érintett adatok és számlák adati, valamint további számviteli értelemben értékes adatok könnyedén eljuthassanak a számlázó programokbból, ügyviteli rendszerekből a könyvelő programokba a Cashbook-kon keresztül.
 
