@@ -57,8 +57,12 @@ A kibővített adatszerkezettel van lehetőség a kiegyenlítések adatainak át
     </invoicePayments>
 </invoice>
 ...
-
 ```
+* Fizetési mód az OSA3 alapértelmezett fizetéso módjai szerint.
+* A kiegyenlítés helye: P-Pénztár, B-Bank.
+
+
+
 * Számla szintű megjegyzés (additionalInvoiceData, dataName=C00001_INVOICE_COMMENT)
 * Számla szintű munkaszám (additionalInvoiceData, dataName=C00002_WORK_NUMBER)
 * Számla szintű nettó főkönyvi szám (additionalInvoiceData, dataName=C00003_LEDGER_NETTO)
