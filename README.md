@@ -35,7 +35,30 @@ A módszer ugyan az, mint az előzőekben említett, azonban ebben az esetben az
 
 ## A bővített adatok
 
-* Kiegyenlítés (invoicePayments)
+### Kiegyenlítés
+
+A kibővített adatszerkezettel van lehetőség a kiegyenlítések adatainak átadására, amita Cashbook továbbít a könyvelőprogram felé.
+```
+...
+<invoice>
+    ...
+    <invoicePayments>
+        <payment>
+            <locationCode>P</locationCode>
+            <locationLedger>3811</locationLedger>
+            <paymentMethod>CASH</paymentMethod>
+            <paymentDate>2019-08-01</paymentDate>
+            <amount>55000</amount>
+            <currencyCode>HUF</currencyCode>
+            <exchangeRate>1</exchangeRate>
+            <warrantNumber>PB-201908-21558</warrantNumber>
+            <paymentComment>Pénztárba befizette.</paymentComment>
+        </payment>
+    </invoicePayments>
+</invoice>
+...
+
+```
 * Számla szintű megjegyzés (additionalInvoiceData, dataName=C00001_INVOICE_COMMENT)
 * Számla szintű munkaszám (additionalInvoiceData, dataName=C00002_WORK_NUMBER)
 * Számla szintű nettó főkönyvi szám (additionalInvoiceData, dataName=C00003_LEDGER_NETTO)
