@@ -1,8 +1,11 @@
+![Cashbook](https://cashbook.hu/site/img/cashbook-logo@2x.png)
 ## NAV OSA3 XML Cashbook adatbővítés
 
-![Cashbook](https://cashbook.hu/site/img/illustration_02_whitebg_render.gif)
-
 Az OSA3 XML adatbővítés azzal a céllal készült, hogy a kötelező adatszolgáltatással nem érintett adatok és számlák adati, valamint további számviteli értelemben értékes adatok könnyedén eljuthassanak a számlázó programokból, ügyviteli rendszerekből a könyvelő programokba a Cashbook-kon keresztül.
+
+A kibővített XML érvényes XML, de az OSA3 XSD-jével nem validálható. Terveink között szerepel átdolgozni úgy, hogy XSD valid maradjon, de mivel indulás óta tökéltesen működik és ez senkinél nem jelentett problémát, egyelőre nem prioritás.
+
+![Cashbook](https://cashbook.hu/site/img/illustration_02_whitebg_render.gif)
 
 Jelenleg ezek a számlázó programok használják a kibővített adatstruktúrát és adnak át adatot a Cashbbook-ba (ABC sorrendben):
 
