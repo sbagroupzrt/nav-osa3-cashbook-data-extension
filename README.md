@@ -255,7 +255,7 @@ Ha ez az elem hiányzik, akkor a Cashbook alapból vevő számlának tekinti a b
 ...
 ```
 
-### Kiegyenlítés
+## Kiegyenlítés
 
 A kibővített adatszerkezettel van lehetőség a kiegyenlítések adatainak átadására, amita Cashbook továbbít a könyvelőprogram felé. Amennyiben a számla kibocsájtása után újabb kiegyenlítést tud az Ügyfél rögzíteni a számlázó programban, abban az esetben az egész XML újra küldhető (az új és régi kiegyenlítésekkel együtt) és a kiegyenlítés bekerül a pénzügyi tétel adatai közé. A további kiegyenlítések beküldése esetén a PDF számlakép nem szükséges, azonban a POST mezőt el kell küldeni a payments tartalommal.
 ```
