@@ -150,11 +150,78 @@ Van lehetőség arra, hogy az XML fájlban átadásra kerüljön a számlához t
 </invoiceData>
 ...
 ```
+### Tétel szintű nettó főkönyvi szám
 
-* Tétel szintű nettó főkönyvi szám (additionalLineData, dataName=C00006_LEDGER_NETTO)
-* Tétel szintű áfa főkönyvi szám (additionalLineData, dataName=C00007_LEDGER_TAX)
-* ~~Tétel szintű elnevezés (additionalLineData, dataName=C00008_LEDGER_TITLE)~~
-* Tétel szintű áfa bevaállsi sor (additionalLineData, dataName=C00009_VAT_RETURN_LINE)
+Van lehetőség arra, hogy az XML fájlban átadásra kerüljön a tételhez tartozó nettó főkönyvi szám. Ehhez az OSA3 XSD álltál definiált **additionalLineData** elemet kell alkalmazni az alábbiak szerint.
+```
+...
+<line>
+    ...
+    <additionalLineData>
+        <dataName>C00006_LEDGER_NETTO</dataName>
+        <dataDescription>Ledger number for line netto</dataDescription>
+        <dataValue>                    
+            911
+        </dataValue>
+    </additionalLineData>
+    ...
+</line>
+...
+```
+### Tétel szintű áfa főkönyvi szám
+
+Van lehetőség arra, hogy az XML fájlban átadásra kerüljön a tételhez tartozó áfa főkönyvi szám. Ehhez az OSA3 XSD álltál definiált **additionalLineData** elemet kell alkalmazni az alábbiak szerint.
+```
+...
+<line>
+    ...
+    <additionalLineData>
+        <dataName>C00007_LEDGER_TAX</dataName>
+        <dataDescription>Ledger number for line tax</dataDescription>
+        <dataValue>                    
+            467
+        </dataValue>
+    </additionalLineData>
+    ....
+</line>
+...
+```
+### Tétel szintű fökönyvi elnevezés
+
+Van lehetőség arra, hogy az XML fájlban átadásra kerüljön a tételhez tartozó főkönyvi elnevezés. Ehhez az OSA3 XSD álltál definiált **additionalLineData** elemet kell alkalmazni az alábbiak szerint.
+```
+...
+<line>
+    ...
+    <additionalLineData>
+        <dataName>C00008_LEDGER_TITLE</dataName>
+        <dataDescription>Ledger title</dataDescription>
+        <dataValue>                    
+            Értékesítés árbevétel
+        </dataValue>
+    </additionalLineData>
+    ....
+</line>
+...
+```
+### Tétel szintű áfa bevaállsi sor
+
+Van lehetőség arra, hogy az XML fájlban átadásra kerüljön a tételhez tartozó áfa bevallási sor. Ehhez az OSA3 XSD álltál definiált **additionalLineData** elemet kell alkalmazni az alábbiak szerint.
+```
+...
+<line>
+    ...
+    <additionalLineData>
+        <dataName>C00009_VAT_RETURN_LINE</dataName>
+        <dataDescription>Vat return line</dataDescription>
+        <dataValue>                    
+            06
+        </dataValue>
+    </additionalLineData>
+    ....
+</line>
+...
+```
 
 ## Szállító számlák
 
